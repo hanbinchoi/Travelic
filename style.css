@@ -1,0 +1,201 @@
+html {
+    font-size: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    position:fixed;
+    top: 0;
+    padding: 2.5rem;
+    z-index: 5;
+    color: whitesmoke;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    font-weight: 200;
+    float: left;
+    font-family: 'Bonheur Royale', cursive;
+}
+
+header small {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+#asia {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/asia.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.45s ease-in;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+}
+
+#asia:hover{
+    width: 30vw;
+}
+
+#europe {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/europe.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  
+    transition: all 0.45s ease-in;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+}
+
+
+#europe:hover{
+    width: 30vw;
+}
+
+
+
+#n-america {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/n-america.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.45s ease-in;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+}
+
+#n-america:hover{
+    width: 30vw;
+}
+
+
+#s-america {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/s-america.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.45s ease-in;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+}
+
+#s-america:hover{
+    width: 30vw;
+}
+
+
+#africa {
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/africa.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.45s ease-in;
+    transition-delay: 0ms;
+    transition-timing-function: cubic-bezier(.5,0,.1,1);
+}
+
+#africa:hover{
+    width: 30vw;
+}
+
+.container h1{
+    color: whitesmoke;
+    font-size: 4rem;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: -1.5px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+.focus {
+    /* background: url('/img/test.png') no-repeat center center/cover, rgba(0, 0, 0, 0.5) !important;
+    background-blend-mode: multiply !important; */
+    filter: brightness(30%);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    height: 5vh;
+    width: 100vw;
+    padding: 10px;
+    background-color: #000;
+    color: whitesmoke;
+}
+
+footer p {
+    margin-left: 1vw;
+    font-size: 2rem;
+    font-family: 'Bonheur Royale', cursive;
+}
+
+footer i {
+    margin-right: 1vw;
+    font-size: 3rem;
+}
+
+footer i:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
