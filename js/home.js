@@ -14,8 +14,6 @@
         for(let i=0; i<containers.length; i++){
             containers[i].classList.add('focus');
         }
-        
-        console.log(containers[1].style.transform);
         containers[index].classList.remove('focus');
     }
 

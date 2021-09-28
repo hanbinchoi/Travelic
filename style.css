@@ -5,8 +5,12 @@ html {
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
 }
 
 a:link {
@@ -19,24 +23,27 @@ a:visited {
     color: var(--color-white);
 }
 
-header {
-    position:fixed;
+/* home page */
+
+.home header {
+    position: fixed;
     top: 0;
     padding: 2.5rem;
+    height: 5vh;
     z-index: 5;
     color: whitesmoke;
 }
 
-header h1 {
-    font-size: 4.5rem;
+.home header h1 {
+    font-size: 3rem;
     font-weight: 200;
     float: left;
     font-family: 'Bonheur Royale', cursive;
 }
 
-header small {
+.home header small {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 100;
     font-family: 'Nanum Pen Script', cursive;
 }
@@ -49,7 +56,7 @@ header small {
 }
 
 #asia {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('img/asia.jpg') no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('img/asia.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -61,15 +68,15 @@ header small {
     text-align: center;
     transition: all 0.45s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
 
-#asia:hover{
+#asia:hover {
     width: 30vw;
 }
 
 #europe {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/europe.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/europe.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -78,21 +85,21 @@ header small {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;  
+    text-align: center;
     transition: all 0.45s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
 
 
-#europe:hover{
+#europe:hover {
     width: 30vw;
 }
 
 
 
 #n-america {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/n-america.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/n-america.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -104,16 +111,16 @@ header small {
     text-align: center;
     transition: all 0.45s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
 
-#n-america:hover{
+#n-america:hover {
     width: 30vw;
 }
 
 
 #s-america {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/s-america.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/s-america.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -125,16 +132,16 @@ header small {
     text-align: center;
     transition: all 0.45s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
 
-#s-america:hover{
+#s-america:hover {
     width: 30vw;
 }
 
 
 #africa {
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("img/africa.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/africa.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -146,14 +153,14 @@ header small {
     text-align: center;
     transition: all 0.45s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5,0,.1,1);
+    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
 
-#africa:hover{
+#africa:hover {
     width: 30vw;
 }
 
-.container h1{
+.container h1 {
     color: whitesmoke;
     font-size: 4rem;
     font-style: normal;
@@ -182,10 +189,10 @@ footer {
     align-items: center;
     position: fixed;
     bottom: 0;
+    left: 0;
     height: 5vh;
-    width: 100vw;
-    padding: 10px;
-    background-color: #000;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     color: whitesmoke;
 }
 
@@ -196,8 +203,9 @@ footer p {
 }
 
 footer i {
-    margin-right: 1vw;
+    color: whitesmoke;
     font-size: 3rem;
+    margin-right: 2vw;
 }
 
 footer i:hover {
@@ -208,4 +216,175 @@ footer i:hover {
 .container {
     display: flex;
     flex-direction: row;
+}
+
+
+
+/* asia page */
+
+.country {
+    background-color: #000000;
+    margin: 0 5vw;
+}
+.country header {
+    display: flex;
+    width: 90vw;
+    margin-top: 5vh;
+    color: whitesmoke;
+    justify-content: space-between;
+}
+
+.country header h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    float: left;
+    font-family: 'Bonheur Royale', cursive;
+}
+
+.country header small {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.countrys {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    color:whitesmoke;
+}
+
+.country li {
+    margin-right: 2vw;
+    color: whitesmoke;
+}
+.card-container {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 22vw;
+    height: 22vw;
+    perspective: 1000px;
+    padding: 2vw;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    color: black;
+}
+
+.flip-card-front > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: brightness(80%);
+}
+
+.desc-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.desc-front > h1 {
+    color: whitesmoke;
+    font-size: 5em;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-variant-numeric: normal;
+    font-variant-east-asian: normal;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-size: cover;
+    color: white;
+    transform: rotateY(180deg);
+}
+.flip-card-back > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    filter: brightness(40%);
+}
+
+.flip-card-back h1::after{
+    display: block;
+    position: relative;
+    left: 50%;
+    content: '';
+    width: 50px;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 8px;
+    background-color: gray;
+    margin-bottom: 8px;
+}
+
+.desc-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.desc-back h1 {
+    font-size: 4rem;
+}
+
+.desc-back p {
+    font-size: 1.5rem;
 }
