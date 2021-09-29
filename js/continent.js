@@ -1,4 +1,4 @@
-(() => {
+window.onload = (() => {
     let i = 0;
     const txt = 'Welcome to Asia'; /* The text */
     const speed = 100; /* The speed/duration of the effect in milliseconds */
