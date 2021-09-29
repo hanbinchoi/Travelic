@@ -13,12 +13,9 @@
     ]
 
     // image preload
-    function preload() {
-        for (i = 0; i < preload.arguments.length; i++) {
-            titleImge.src = preload.arguments[i];
-        }
-    }
-    preload(imgSet);
+    setTimeout(function() {
+        console.log('Works!');
+    }, 3000);
 
     function typeWriter() {
         if (i < txt.length) {
