@@ -9,7 +9,8 @@ html {
     box-sizing: border-box;
 }
 
-ul{
+ul,
+li {
     list-style: none;
 }
 
@@ -141,7 +142,7 @@ a:visited {
 
 
 #africa {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/africa.jpg") no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/africa.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -158,6 +159,16 @@ a:visited {
 
 #africa:hover {
     width: 30vw;
+}
+
+.coming-soon {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background: url(./img/coming-soon.png) no-repeat;
+    background-size: contain;
+    filter: opacity(0.5) drop-shadow(0 0 0 red);
+    z-index: 1;
 }
 
 .container h1 {
@@ -226,6 +237,7 @@ footer i:hover {
     background-color: #000000;
     margin: 0 5vw;
 }
+
 .country header {
     display: flex;
     width: 90vw;
@@ -253,19 +265,62 @@ footer i:hover {
     justify-content: space-around;
     align-items: center;
     font-size: 2rem;
-    color:whitesmoke;
+    color: whitesmoke;
 }
 
 .country li {
     margin-right: 2vw;
     color: whitesmoke;
 }
+
+.title {
+    margin: 2% 0;
+    height: 550px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-container {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.title-container {
+    position: absolute;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: whitesmoke;
+    font-family: 'Bonheur Royale', cursive;
+}
+
 .card-container {
     margin-top: 5vh;
     display: flex;
     justify-content: left;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.sub-title{
+    font-size: 30px;
+    color: whitesmoke;
+    text-align: center;
+    margin: 2% 0;
+    border-top: 3px solid gray;
+    padding-top: 5%;
 }
 
 .flip-card {
@@ -307,17 +362,31 @@ footer i:hover {
     color: black;
 }
 
-.flip-card-front > img {
+
+.flip-card-front>img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     filter: brightness(80%);
 }
 
+.flip-card .coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(./img/coming-soon.png) no-repeat;
+    background-size: contain;
+    filter: opacity(0.5) drop-shadow(0 0 0 red);
+    z-index: 1;
+}
+
+
 .desc-front {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -325,7 +394,13 @@ footer i:hover {
     left: 0%;
 }
 
-.desc-front > h1 {
+.desc-front h3 {
+    margin: 10px 0;
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+
+.desc-front>h1 {
     color: whitesmoke;
     font-size: 5em;
     font-style: normal;
@@ -348,14 +423,15 @@ footer i:hover {
     color: white;
     transform: rotateY(180deg);
 }
-.flip-card-back > img {
+
+.flip-card-back>img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     filter: brightness(40%);
 }
 
-.flip-card-back h1::after{
+.flip-card-back h1::after {
     display: block;
     position: relative;
     left: 50%;
