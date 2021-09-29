@@ -15,7 +15,7 @@
     // image preload
     setTimeout(function() {
         console.log('Works!');
-    }, 3000);
+    }, 1000);
 
     function typeWriter() {
         if (i < txt.length) {
