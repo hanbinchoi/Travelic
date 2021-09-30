@@ -12,13 +12,6 @@
         "../img/asia/12.jpg", "../img/asia/13.jpg", "../img/asia/14.jpg", "../img/asia/15.jpg",
     ]
 
-<<<<<<< HEAD
-=======
-    // image preload
-    setTimeout(function() {
-        console.log('Works!');
-    }, 1000);
->>>>>>> 3578921d9694a1d8d482f3a66b5bdbb21d5a9e7e
 
     function typeWriter() {
         if (i < txt.length) {
@@ -28,11 +21,5 @@
             setTimeout(typeWriter, speed);
         }
     }
-<<<<<<< HEAD
     var timeoutId = setTimeout(typeWriter,200);
-    // clearTimeout(timeoutId);
 })();
-=======
-    typeWriter();
-})();
->>>>>>> 3578921d9694a1d8d482f3a66b5bdbb21d5a9e7e
