@@ -234,10 +234,11 @@ footer i:hover {
 
 .country {
     background-color: #000000;
-    margin: 0 5vw;
+
 }
 
 .country header {
+    margin: 0 5vw;
     display: flex;
     width: 90vw;
     margin-top: 5vh;
@@ -270,18 +271,101 @@ footer i:hover {
 .country li {
     margin-right: 2vw;
     color: whitesmoke;
+    padding: 5px;
+}
+
+.country li:hover {
+    background-color: olive;
+}
+
+.active {
+    border: 1px solid whitesmoke;
+    border-radius: 2px;
+
+}
+
+.navbar_toggle-btn {
+    position: absolute;
+    font-size: 2.5em;
+    right: 10px;
+    background-color: transparent;
+    border:none;
+    color: whitesmoke;
+    
+}
+
+.countrys.open{
+    display: block;
+    margin:0;
+    width: 100%;
+    text-align: center;
+}
+
+.left-navbar {
+    position: fixed;
+    position: -webkit-sticky;
+    top: 5vh;
+    left: 1vw;
+    display: inline-flex;
+    transform: scaleY(0);
+    flex-direction: column;
+    color: whitesmoke;
+    text-align: center;
+    transition: all .2s ease-in;
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.logo::after {
+    display: block;
+    content: "";
+    clear: both;
+    margin-bottom: 15px;
+}
+
+.left-navbar h1 {
+    font-size: 3rem;
+    font-weight: 200;
+    float: left;
+    font-family: 'Bonheur Royale', cursive;
+}
+
+.left-navbar small {
+    font-size: .5em;
+    font-weight: 100;
+    font-family: 'Nanum Pen Script', cursive;
+    clear: left;
+}
+
+.left-navbar li {
+    margin: 5px 0;
+    font-size: 2em;
 }
 
 .title {
-    margin: 2% 0;
+    margin: 5vh 5vw;
     height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.title-container {
+    position: absolute;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    color: whitesmoke;
+    font-family: 'Bonheur Royale', cursive;
 }
 
 .img-container {
-    width: 90%;
+    width: 80%;
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
@@ -294,32 +378,23 @@ footer i:hover {
     filter: brightness(60%);
 }
 
-.title-container {
-    position: absolute;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    color: whitesmoke;
-    font-family: 'Bonheur Royale', cursive;
-}
-
-.card-container {
-    margin-top: 5vh;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 .sub-title {
     font-size: 30px;
     color: whitesmoke;
     text-align: center;
-    margin: 2% 0;
+    margin: 5% 15%;
     border-top: 3px solid gray;
     padding-top: 5%;
+}
+
+.card-container {
+    width: 90%;
+    margin: 5vh auto;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .flip-card {
@@ -466,12 +541,77 @@ footer i:hover {
 
 @media screen and (max-width: 800px) {
 
+    /* mobile home page */
     .container h1 {
         font-size: 2em;
     }
+
     .coming-soon {
         top: 300px;
         width: 70px;
         height: 70px;
     }
+
+    /* mobile continent page */
+    .country header {
+        margin-top: 2vh;
+        flex-direction: column;
+    }
+
+    .country header h1 {
+        font-size: 3rem;
+    }
+
+    .country header small {
+        font-size: .5em;
+    }
+
+    .countrys {
+        display: none;
+    }
+
+
+    .title {
+        margin: 2% 0;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .title-container {
+        position: absolute;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        color: whitesmoke;
+        font-family: 'Bonheur Royale', cursive;
+    }
+
+    .sub-title {
+        font-size: 2em;
+    }
+
+    .card-container {
+        margin-top: 3vh;
+        flex-direction: column;
+    }
+
+    .flip-card {
+        width: 50vw;
+        height: 50vw;
+    }
+
+
+    .flip-card .coming-soon {
+        width: 100px;
+    }
+
+    .desc-front>h1 {
+        font-size: 3em;
+    }
+
 }
