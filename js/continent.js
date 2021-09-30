@@ -12,13 +12,6 @@
         "../img/asia/12.jpg", "../img/asia/13.jpg", "../img/asia/14.jpg", "../img/asia/15.jpg",
     ]
 
-    // image preload
-    function preload() {
-        for (i = 0; i < preload.arguments.length; i++) {
-            titleImge.src = preload.arguments[i];
-        }
-    }
-    preload(imgSet);
 
     function typeWriter() {
         if (i < txt.length) {
@@ -28,5 +21,6 @@
             setTimeout(typeWriter, speed);
         }
     }
-    typeWriter();
+    var timeoutId = setTimeout(typeWriter,200);
+    // clearTimeout(timeoutId);
 })();
