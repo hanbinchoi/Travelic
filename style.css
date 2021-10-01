@@ -50,8 +50,10 @@ a:visited {
 }
 
 .main {
+    background-color: black;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
     width: 100vw;
     height: 100vh;
 }
@@ -61,19 +63,7 @@ a:visited {
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.45s ease-in;
-    transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
-}
 
-#asia:hover {
-    width: 30vw;
 }
 
 #europe {
@@ -81,84 +71,48 @@ a:visited {
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.45s ease-in;
-    transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
+
 }
-
-
-#europe:hover {
-    width: 30vw;
-}
-
-
 
 #n-america {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/n-america.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.45s ease-in;
-    transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
-
-#n-america:hover {
-    width: 30vw;
-}
-
 
 #s-america {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/s-america.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    width: 20vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.45s ease-in;
-    transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
-}
 
-#s-america:hover {
-    width: 30vw;
 }
-
 
 #africa {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("img/africa.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
+}
+
+.container {
     width: 20vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: all 0.45s ease-in;
+    transition: all 0.2s ease-in;
     transition-delay: 0ms;
-    transition-timing-function: cubic-bezier(.5, 0, .1, 1);
 }
-
-#africa:hover {
+/* 
+.container:hover {
     width: 30vw;
+} */
+
+.container.focus {
+    filter: brightness(30%);
 }
 
 .coming-soon {
@@ -189,9 +143,6 @@ a:visited {
     -webkit-text-size-adjust: 100%;
 }
 
-.focus {
-    filter: brightness(30%);
-}
 
 footer {
     display: flex;
@@ -543,14 +494,47 @@ footer i:hover {
 @media screen and (max-width: 800px) {
 
     /* mobile home page */
+
+    .home header{
+        position: sticky;
+        background-color: black;
+        margin: 0;
+        padding: 1em;
+    }
+
+    .main {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .main .container {
+        width: 100%;
+        height: 200px;
+        position: relative;
+    }
+
     .container h1 {
-        font-size: 2em;
+        font-size: 4em;
     }
 
     .coming-soon {
-        top: 300px;
-        width: 70px;
-        height: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    footer p{
+        font-size: 1.5em;
+    }
+
+    footer .contact {
+        font-size: 2em;
+        margin-right: 20px;
     }
 
     /* mobile continent page */

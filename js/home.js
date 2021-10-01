@@ -11,17 +11,27 @@
 
     function focusContainer(index) {
         
-        for(let i=0; i<containers.length; i++){
-            containers[i].classList.add('focus');
+        for (let i = 0; i < containers.length; i++) {
+            if (i < index) {
+                containers[i].style.transform = "translate3d(-5vw,0px,0px) scale(1.0)";
+                containers[i].classList.add('focus');
+            } else if (i > index) {
+                containers[i].style.transform = "translate3d(5vw,0px,0px) scale(1.0)";
+                containers[i].classList.add('focus');
+            } else {
+                containers[i].style.transform = "translate3d(0px,0px,0px) scale(1.5)";
+                containers[i].classList.remove('focus');
+            }
+
         }
-        containers[index].classList.remove('focus');
+
     }
 
     main.addEventListener('mousemove', (event) => {
         focusContainer(event.path[0].dataset['index']);
     })
     main.addEventListener('mouseleave', () => {
-        for(let i=0; i<containers.length; i++){
+        for (let i = 0; i < containers.length; i++) {
             containers[i].classList.remove('focus');
         }
     })

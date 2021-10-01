@@ -53,7 +53,19 @@
             titleImge.style.transition = "all 1000ms ease-in";
         }
     }
+    var preloadImage;
 
+    function preload() {
+    preloadImage  = new Image();
+    preloadImage.src="이미지주소";
+    }
+    
+    window.onload = function() {
+    
+    preload();
+    
+    }
+    
 
     typeWriter();
     // toggle button event
