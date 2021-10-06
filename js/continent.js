@@ -56,16 +56,16 @@
     var preloadImage;
 
     function preload() {
-    preloadImage  = new Image();
-    preloadImage.src="이미지주소";
+        preloadImage = new Image();
+        preloadImage.src = "이미지주소";
     }
-    
-    window.onload = function() {
-    
-    preload();
-    
+
+    window.onload = function () {
+
+        preload();
+
     }
-    
+
 
     typeWriter();
     // toggle button event
