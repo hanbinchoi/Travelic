@@ -53,21 +53,13 @@
             titleImge.style.transition = "all 1000ms ease-in";
         }
     }
-    var preloadImage;
 
-    function preload() {
-        preloadImage = new Image();
-        preloadImage.src = "이미지주소";
-    }
+    window.addEventListener('load', () => {
+        
+        typeWriter();
 
-    window.onload = function () {
+    });
 
-        preload();
-
-    }
-
-
-    typeWriter();
     // toggle button event
     const menu = document.querySelector('.countrys');
     const toggle_btn = document.querySelector('.navbar_toggle-btn');
