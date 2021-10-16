@@ -12,12 +12,8 @@
         } else {
             // 800px 미만에서 사용할 JavaScript
             if (window.scrollY > headerHeight + 100) {
-                // leftNavbar.style.display="inline-flex";
-                // leftNavbar.style.opacity = "1";
                 leftNavbar.style.transform = "scaleY(1)";
             } else {
-                // leftNavbar.style.display="none"
-                // leftNavbar.style.opacity = "0";
                 leftNavbar.style.transform = "scaleY(0)";
             }
         }
@@ -31,8 +27,8 @@
     const txt = 'Welcome to Asia'; /* The text */
     const speed = 120; /* The speed/duration of the effect in milliseconds */
 
-    const titleImge = document.querySelector(".img-container img");
-
+    const titleImage = document.querySelector(".img-container img");
+    const titleImages = []
     const imgSet = [
         "../img/asia/0.jpg", "../img/asia/1.jpg", "../img/asia/2.jpg", "../img/asia/3.jpg",
         "../img/asia/4.jpg", "../img/asia/5.jpg", "../img/asia/6.jpg", "../img/asia/7.jpg",
@@ -40,24 +36,44 @@
         "../img/asia/12.jpg", "../img/asia/13.jpg", "../img/asia/14.jpg", "../img/asia/15.jpg",
     ]
 
+    const imgNum = imgSet.length
 
     function typeWriter() {
         if (i < txt.length) {
             document.querySelector(".title-container h1").innerHTML += txt.charAt(i);
             i++;
-            titleImge.src = imgSet[i];
+            titleImage.src = imgSet[i];
             setTimeout(typeWriter, speed);
         }
         if (i === txt.length) {
-            titleImge.style.filter = "brightness(20%)";
-            titleImge.style.transition = "all 1000ms ease-in";
+            titleImage.style.filter = "brightness(20%)";
+            titleImage.style.transition = "all 1000ms ease-in";
         }
     }
 
-    window.addEventListener('load', () => {
-        
-        typeWriter();
+    // Scene 0 이미지 로드
+	function loadImages() {
+        console.log("in")
+		let numberOfLoadedImages = 0;
+		for (let i = 0; i < imgSet.length; i++) {
+			let imgElem = new Image();
+			imgElem.src = `../img/asia/${i}.JPG`;
+			imgElem.addEventListener('load', () => {
+				titleImages.push(imgElem);
+				numberOfLoadedImages++;
+				console.log("in")
+                console.log(numberOfLoadedImages, imgNum)
+				if (numberOfLoadedImages === imgNum) {
+					// 해당 씬의 이미지가 모두 로드되었으면
+					setTimeout(typeWriter,300);
 
+				}
+			});
+		}
+	}
+
+    window.addEventListener('load', () => {
+        loadImages();
     });
 
     // toggle button event
