@@ -192,7 +192,7 @@ footer i:hover {
     margin: 0 5vw;
     display: flex;
     width: 90vw;
-    margin-top: 5vh;
+    margin-top: 2vh;
     color: whitesmoke;
     justify-content: space-between;
 }
@@ -490,6 +490,22 @@ footer i:hover {
 .desc-back p {
     font-size: 1.5rem;
 }
+
+/* country page */
+.scroll-container {
+    background-color: blueviolet;
+    width: 70%;
+    height: 300vh;
+    margin: 3rem auto;
+
+}
+.scroll-container canvas {
+    position: fixed;
+    background-color: sandybrown;
+    width: 70%;
+    height: 500px;
+}
+
 
 @media screen and (max-width: 800px) {
 
