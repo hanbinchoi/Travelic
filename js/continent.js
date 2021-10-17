@@ -30,10 +30,10 @@
     const titleImage = document.querySelector(".img-container img");
     const titleImages = []
     const imgSet = [
-        "../img/asia/0.jpg", "../img/asia/1.jpg", "../img/asia/2.jpg", "../img/asia/3.jpg",
-        "../img/asia/4.jpg", "../img/asia/5.jpg", "../img/asia/6.jpg", "../img/asia/7.jpg",
-        "../img/asia/8.jpg", "../img/asia/9.jpg", "../img/asia/10.jpg", "../img/asia/11.jpg",
-        "../img/asia/12.jpg", "../img/asia/13.jpg", "../img/asia/14.jpg", "../img/asia/15.jpg",
+        "img/asia/0.jpg", "img/asia/1.jpg", "img/asia/2.jpg", "img/asia/3.jpg",
+        "img/asia/4.jpg", "img/asia/5.jpg", "img/asia/6.jpg", "img/asia/7.jpg",
+        "img/asia/8.jpg", "img/asia/9.jpg", "img/asia/10.jpg", "img/asia/11.jpg",
+        "img/asia/12.jpg", "img/asia/13.jpg", "img/asia/14.jpg", "img/asia/15.jpg",
     ]
 
     const imgNum = imgSet.length
@@ -57,7 +57,7 @@
 		let numberOfLoadedImages = 0;
 		for (let i = 0; i < imgSet.length; i++) {
 			let imgElem = new Image();
-			imgElem.src = `../img/asia/${i}.JPG`;
+			imgElem.src = `img/asia/${i}.JPG`;
 			imgElem.addEventListener('load', () => {
 				titleImages.push(imgElem);
 				numberOfLoadedImages++;
