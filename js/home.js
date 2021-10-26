@@ -16,15 +16,15 @@
             if (i < index) {
                 containers[i].style.transform = "translate3d(-5vw,0px,0px) scale(1.0)";
                 containers[i].classList.add('focus');
-                console.log("in");
+
             } else if (i > index) {
                 containers[i].style.transform = "translate3d(5vw,0px,0px) scale(1.0)";
                 containers[i].classList.add('focus');
-                console.log("out");
+
             } else {
                 containers[i].style.transform = "translate3d(0px,0px,0px) scale(1.5)";
                 containers[i].classList.remove('focus');
-                console.log("out2")
+
             }
 
         }

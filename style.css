@@ -26,6 +26,10 @@ a:visited {
 
 /* home page */
 
+.home {
+    background-color: #000;
+}
+
 .home header {
     position: fixed;
     top: 0;
@@ -55,7 +59,6 @@ a:visited {
     flex-direction: row;
     overflow: hidden;
     width: 100vw;
-    height: 100vh;
 }
 
 #asia {
@@ -495,17 +498,19 @@ footer i:hover {
 .scroll-container {
     background-color: blueviolet;
     width: 70%;
-    height: 300vh;
+    height: 800vh;
     margin: 3rem auto;
 
 }
-.scroll-container canvas {
+.scroll-img {
     position: fixed;
-    background-color: sandybrown;
-    width: 70%;
-    height: 500px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    background: url("./video/img_0.jpg");
+    width: 720px;
+    height: 404px;
 }
-
 
 @media screen and (max-width: 800px) {
 

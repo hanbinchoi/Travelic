@@ -53,7 +53,6 @@
 
     // Scene 0 이미지 로드
 	function loadImages() {
-        console.log("in")
 		let numberOfLoadedImages = 0;
 		for (let i = 0; i < imgSet.length; i++) {
 			let imgElem = new Image();
@@ -61,8 +60,6 @@
 			imgElem.addEventListener('load', () => {
 				titleImages.push(imgElem);
 				numberOfLoadedImages++;
-				console.log("in")
-                console.log(numberOfLoadedImages, imgNum)
 				if (numberOfLoadedImages === imgNum) {
 					// 해당 씬의 이미지가 모두 로드되었으면
 					setTimeout(typeWriter,300);
