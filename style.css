@@ -186,9 +186,22 @@ footer i:hover {
 
 /* asia page */
 
-.country {
+.country,
+.japan {
     background-color: #000000;
 
+}
+.japan header {
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 6rem;
+    color: #fff;
+    display: flex;
+    margin-top: 2vh;
+    justify-content: space-between;
 }
 
 .country header {
@@ -200,14 +213,14 @@ footer i:hover {
     justify-content: space-between;
 }
 
-.country header h1 {
+header h1 {
     font-size: 5rem;
     font-weight: 200;
     float: left;
     font-family: 'Bonheur Royale', cursive;
 }
 
-.country header small {
+header small {
     display: inline-block;
     font-size: 1.5em;
     font-weight: 100;
@@ -222,13 +235,13 @@ footer i:hover {
     color: whitesmoke;
 }
 
-.country li {
+li {
     margin-right: 2vw;
     color: whitesmoke;
     padding: 5px;
 }
 
-.country li:hover {
+li:hover {
     background-color: olive;
 }
 
@@ -259,6 +272,7 @@ footer i:hover {
 .left-navbar {
     position: fixed;
     position: -webkit-sticky;
+    z-index: 11;
     top: 5vh;
     left: 1vw;
     display: inline-flex;
@@ -495,21 +509,68 @@ footer i:hover {
 }
 
 /* country page */
-.scroll-container {
-    background-color: blueviolet;
-    width: 70%;
-    height: 800vh;
-    margin: 3rem auto;
-
+.scroll-section {
+    color: #000;
+    padding-top: 50vh;
+    border: 3px solid blue;
 }
-.scroll-img {
+#scroll-section-0 h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+.main-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    font-weight: bold;
+    font-size: 5rem;
+    opacity: 0;
+}
+
+.main-message p {
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+}
+.description {
+    padding: 0 1rem;
+    margin: 0 200px;
+    font-size: 1.2rem;
+    color: #888;
+}
+.description strong {
+    float: left;
+    margin-right: 0.2em;
+    font-size: 3rem;
+    color: white;
+}
+.sticky-elem {
+    display: none;
     position: fixed;
-    margin: 0 auto;
     left: 0;
-    right: 0;
-    background: url("./video/img_0.jpg");
-    width: 720px;
-    height: 404px;
+    width: 100%;
+}
+
+.sticky-elem-canvas {
+    top: 0;
+}
+
+.canvas-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#video-canvas-0 {
+    margin: 10% 0;
+    background-color: blanchedalmond;
+}
+
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem
+{
+    display: block;
 }
 
 @media screen and (max-width: 800px) {
@@ -623,5 +684,7 @@ footer i:hover {
     .desc-front>h1 {
         font-size: 3em;
     }
-
+    .japan header {
+        padding: 0 1rem;
+    }
 }
