@@ -601,47 +601,59 @@ li:hover {
     margin-left: 10px;
 }
 
-.food-container {
+.food-container,
+.place-container  {
     margin: 20vh 0;
     text-align: center;
     position: relative;
 }
-.food-container .food-desc {
+
+.food-container .food-desc,
+.place-container .place-desc {
     font-size: 3rem;
-    margin: 20px 0;
+    margin: 30px 0;
 }
-.food-box {
+.food-box,
+.place-box {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
     padding: 0 10px;
 }
-.food-left {
+.food-left,
+.place-left {
     position: absolute;
     font-size: 30px;
     top: 20vh;
     left: -4vw;
     cursor: pointer;
 }
-.food-right {
+.food-right,
+.place-right {
     position: absolute;
     font-size: 30px;
     top: 20vh;
     right: -4vw;
     cursor: pointer;
 }
-.food-card {
+.food-card,
+.place-card {
     position: relative;
     margin-right: 30px;
     transition: all 0.2s ease-in ;
 }
-.food-card img{
+.food-card img,
+.place-card img{
     width: 250px;
     height: 250px;
     border-radius: 50%;
 }
-.card-desc {
+.food-card:hover .card-desc,
+.place-card:hover .card-desc {
     display: flex;
+}
+.card-desc {
+    display: none;
     border-radius: 50%;
     position: absolute;
     background-color: rgba(0,0,0,0.3);
@@ -654,16 +666,16 @@ li:hover {
     justify-content: center;
     align-items: center;
 }
-.card-desc p,
 .card-desc h3 {
     margin: 3px 0;
 }
-.card-desc p {
-    font-size: 1.5em;
-    text-align: center;
-}
 .card-desc h3 {
     font-size: 2em;
+}
+
+.bottom-container {
+    width: 100%;
+    height: 30px;
 }
 
 @media screen and (max-width: 800px) {
