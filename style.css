@@ -566,20 +566,22 @@ li:hover {
 
 .main-container {
     width: 100%;
-    height: 350px;
+    height: 300px;
     display: grid;
     grid-template-columns: 2fr 3fr;
     font-size: 1.5rem;
     margin-bottom: 5vh;
 }
-.img-box {
-    background: url("./img/japan.jpg") no-repeat center;
-    background-size: cover;
+
+#osaka-map {
+
     width: 100%;
     height: 100%;
+
 }
+
 .desc-container {
-    padding: 10px 30px 30px 30px;
+    padding: 0px 30px 30px 30px;
     width: 100%;
     flex-basis: 2;
 }
@@ -587,18 +589,37 @@ li:hover {
     margin-bottom: 15px;
     font-weight: 700;
     color: #F2CB61;
+    font-size: 2em;
+}
+.desc-container h3 {
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #EAEAEA;
+}
+.content-box {
+    display: grid;
+    width: 550px;
+    grid-template-columns: 350px 250px;
+    font-size: 1.2em;
+    color:#EAEAEA;
+}
+.content-box .pannel {
+    margin-right: 10px;
 }
 .desc-box {
     display: grid;
+    font-size: .8em;
     grid-template-columns: 40px 1fr;
-    grid-gap: 7px;
+    grid-gap: 4px;
+    padding: 0 20px 40px 20px;
+    
 }
 .desc-box-title {
     color: #F2CB61;
 }
 .desc-box a {
-    color: #FFFFCD;
-    margin-left: 10px;
+    text-decoration: underline;
 }
 
 .food-container,
