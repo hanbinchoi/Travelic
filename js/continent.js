@@ -51,23 +51,24 @@
         }
     }
 
-    // Scene 0 이미지 로드
-	function loadImages() {
-		let numberOfLoadedImages = 0;
-		for (let i = 0; i < imgSet.length; i++) {
-			let imgElem = new Image();
-			imgElem.src = `img/asia-${i}.JPG`;
-			imgElem.addEventListener('load', () => {
-				titleImages.push(imgElem);
-				numberOfLoadedImages++;
-				if (numberOfLoadedImages === imgNum) {
-					// 해당 씬의 이미지가 모두 로드되었으면
-					setTimeout(typeWriter,300);
 
-				}
-			});
-		}
-	}
+    // Scene 0 이미지 로드
+    function loadImages() {
+        let imgElem;
+        let numberOfLoadedImages = 0;
+        for (let i = 0; i < imgSet.length; i++) {
+            imgElem = new Image();
+            imgElem.src = `img/asia-${i}.JPG`;
+            titleImages.push(imgElem);
+            numberOfLoadedImages++;
+            if (numberOfLoadedImages === imgNum) {
+                // 해당 씬의 이미지가 모두 로드되었으면
+                setTimeout(typeWriter, 300);
+
+            }
+
+        }
+    }
 
     window.addEventListener('load', () => {
         loadImages();
