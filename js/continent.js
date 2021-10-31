@@ -23,7 +23,7 @@
 
     // title animation
 
-    let i = 0;
+    let typing = 0;
     const txt = 'Welcome to Asia'; /* The text */
     const speed = 120; /* The speed/duration of the effect in milliseconds */
 
@@ -39,20 +39,27 @@
     const imgNum = imgSet.length
 
     function typeWriter() {
-        if (i < txt.length) {
-            document.querySelector(".title-container h1").innerHTML += txt.charAt(i);
-            i++;
-            titleImage.src = imgSet[i];
+        if (typing < txt.length) {
+            document.querySelector(".title-container h1").innerHTML += txt.charAt(typing);
+            typing++;
+            titleImage.src = imgSet[typing];
             setTimeout(typeWriter, speed);
         }
-        if (i === txt.length) {
+        if (typing === txt.length) {
             titleImage.style.filter = "brightness(20%)";
             titleImage.style.transition = "all 1000ms ease-in";
         }
     }
 
-
-    // Scene 0 이미지 로드
+    function setImages() {
+		let imgElem;
+		for (let i = 0; i < imgSet.length; i++) {
+			imgElem = new Image();
+			imgElem.src = `./img/asia-${i}.jpg`;
+			titleImages.push(imgElem);
+		}
+	}
+    // 이미지 로드
     function loadImages() {
         let imgElem;
         let numberOfLoadedImages = 0;
@@ -71,7 +78,8 @@
     }
 
     window.addEventListener('load', () => {
-        loadImages();
+        setImages();
+        typeWriter();
     });
 
     // toggle button event
