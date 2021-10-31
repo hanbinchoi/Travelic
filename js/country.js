@@ -264,7 +264,7 @@
 	})
 
 	foodRight.addEventListener('click', () => {
-		if (foodMovement == (-1) * foodCardSize * (foodCards.length - 2)) return;
+		if (foodMovement == (-1) * foodCardSize * (foodCards.length)) return;
 		foodMovement -= foodCardSize;
 		for (let i = 0; i < foodCards.length; i++) {
 			foodCards[i].style.transform = `translate3d(${foodMovement}px, 0, 0)`;
@@ -287,7 +287,7 @@
 	})
 
 	placeRight.addEventListener('click', () => {
-		if (placeMovement == (-1) * placeCardSize * (placeCards.length - 2)) return;
+		if (placeMovement == (-1) * placeCardSize * (placeCards.length)) return;
 		placeMovement -= placeCardSize;
 		for (let i = 0; i < placeCards.length; i++) {
 			placeCards[i].style.transform = `translate3d(${placeMovement}px, 0, 0)`;
