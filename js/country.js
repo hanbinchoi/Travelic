@@ -5,6 +5,11 @@
 	let currentScene = 0;
 	let enterNewScene = false;
 
+	let acc = 0.1;
+	let delayedYOffest = 0;
+	let rafId;
+	let rafState;
+
 	const header = document.querySelector('header');
 	// 각 섹션 정보
 	const sceneInfo = [{
@@ -138,10 +143,9 @@
 		const scrollRatio = currentYOffset / scrollHeight;
 		switch (currentScene) {
 			case 0:
-				let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
-				objs.context.drawImage(objs.videoImages[sequence], 0, 0);
-				objs.context.fillStyle = "rgba(0,0,0, 0.4)";
-				objs.context.fillRect(0, 0, 1920, 1080);
+				// let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
+				// objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+
 				objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset)
 				if (scrollRatio <= 0.27) {
 					objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
@@ -226,9 +230,39 @@
 		const heightRatio = window.innerHeight / 1080;
 		sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%,0) scale(${heightRatio})`;
 	}
+
+	function loop() {
+		delayedYOffest = delayedYOffest + (yOffset - delayedYOffest) * acc;
+
+		if (!enterNewScene) {
+			const currentYOffset = delayedYOffest - prevScrollHeight;
+			const values = sceneInfo[currentScene].values;
+			const objs = sceneInfo[currentScene].objs;
+			if (currentScene === 0) {
+				let sequence = Math.round(calcValues(values.imageSequence, currentYOffset));
+				if (objs.videoImages[sequence]) {
+					objs.context.drawImage(objs.videoImages[sequence], 0, 0);
+					objs.context.fillStyle = "rgba(0,0,0, 0.1)";
+					objs.context.fillRect(0, 0, 1920, 1080);
+				}
+			}
+		}
+
+
+		rafId = requestAnimationFrame(loop);
+		if (Math.abs(yOffset - delayedYOffest) < 1) {
+			cancelAnimationFrame(rafId);
+			rafState = false;
+		}
+	}
+
 	window.addEventListener('scroll', () => {
 		yOffset = window.pageYOffset;
 		scrollLoop();
+		if (!rafState) {
+			rafId = requestAnimationFrame(loop);
+			rafState = true;
+		}
 	});
 	window.addEventListener('load', () => {
 		setLayout();
@@ -236,7 +270,14 @@
 		sceneInfo[0].objs.context.fillStyle = "rgba(0,0,0, 0.4)";
 		sceneInfo[0].objs.context.fillRect(0, 0, 1920, 1080);
 	});
-	window.addEventListener('resize', setLayout);
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 600) {
+			setLayout();
+		}
+	});
+
+	window.addEventListener('orientationchange', setLayout);
 
 	setCanvasImages();
 
@@ -255,8 +296,11 @@
 	const foodCardSize = foodCards[0].offsetWidth;
 
 	let foodMovement = 0
+
 	foodLeft.addEventListener('click', () => {
-		if (foodMovement == 0) return;
+		if (foodMovement == 0) {
+			return;
+		}
 		foodMovement += foodCardSize;
 		for (let i = 0; i < foodCards.length; i++) {
 			foodCards[i].style.transform = `translate3d(${foodMovement}px, 0, 0)`;
@@ -264,7 +308,20 @@
 	})
 
 	foodRight.addEventListener('click', () => {
-		if (foodMovement == (-1) * foodCardSize * (foodCards.length)) return;
+		console.log(window.innerWidth);
+		if (window.innerWidth >= 800) {
+            // 800px 이상에서 사용할 JavaScript
+            if (foodMovement === (-1) * foodCardSize * (foodCards.length-3)) {
+				return;
+			}
+			
+        } else {
+            // 800px 미만에서 사용할 JavaScript
+            if (foodMovement === (-1) * foodCardSize * (foodCards.length)) {
+				return;
+			}
+        }
+		
 		foodMovement -= foodCardSize;
 		for (let i = 0; i < foodCards.length; i++) {
 			foodCards[i].style.transform = `translate3d(${foodMovement}px, 0, 0)`;
@@ -278,6 +335,7 @@
 	const placeCardSize = placeCards[0].offsetWidth;
 
 	let placeMovement = 0
+	
 	placeLeft.addEventListener('click', () => {
 		if (placeMovement == 0) return;
 		placeMovement += placeCardSize;
@@ -287,7 +345,13 @@
 	})
 
 	placeRight.addEventListener('click', () => {
-		if (placeMovement == (-1) * placeCardSize * (placeCards.length)) return;
+		if (window.innerWidth >= 800) {
+			if (placeMovement == (-1) * placeCardSize * (placeCards.length-3)) return;
+		} else {
+			if (placeMovement == (-1) * placeCardSize * (placeCards.length)) return;
+		}
+
+		
 		placeMovement -= placeCardSize;
 		for (let i = 0; i < placeCards.length; i++) {
 			placeCards[i].style.transform = `translate3d(${placeMovement}px, 0, 0)`;
