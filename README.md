@@ -1,4 +1,4 @@
-# Travelic
+# Travelic - 여행의 즐거움
 ## [🔗URL](https://hanbinchoi.github.io/Travelic/index.html)
 **Travelic은 대륙 별 여행도시를 소개하고 먹거리, 가볼만한 곳의 정보를 알려줍니다. 순수 JavaScript로 구현되었으며 CSS, HTML 을 사용하였습니다. 또한 지도 표시를 위해 Google Map API를 사용합니다. Menu bar, title animation, scroll animation, 화살표 click 이벤트 등이 JS를 통해 구현되었습니다.**
 <br>
